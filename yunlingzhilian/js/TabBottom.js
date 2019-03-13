@@ -27,7 +27,7 @@ var HomeCourse = require('./HomeCourse');//课程主界面
         super(props);
         this.state = {
             selectedTab: 'home',
-            tabName: ['首页', '发现', '我']
+            tabName: ['门锁', '访客', '我']
         }
     }
      // HomeView 等 界面切换的时候一定要加上navigator路由要不然无法跳转界面
