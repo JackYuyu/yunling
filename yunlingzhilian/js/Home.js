@@ -206,7 +206,7 @@ class Home extends Component {
                     <View style={styles.rightContainer}>
 
                         {(results.images != undefined) ?
-                            <Image style={styles.thumbnail} source={{uri: results.images[0]}}/> :
+                            <Image style={styles.thumbnail} source={no_data_bg}/> :
                             <Image style={[styles.thumbnail]} source={no_data_bg}/>
                         }
 
