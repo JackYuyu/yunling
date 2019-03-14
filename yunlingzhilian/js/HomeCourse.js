@@ -4,6 +4,8 @@
 import React, {Component} from 'react';
 import {
     StyleSheet,
+    Button,
+    Alert,
     Text,
     View,
     Image,
@@ -16,7 +18,8 @@ import {
 } from 'react-native';
 
 import Swiper from 'react-native-swiper';
-
+// import { Button } from 'react-native-elements';
+import Icon from 'react-native-vector-icons/FontAwesome';
 //引入广告详情界面
 var Advertisting = require('./Advertisting');
 
@@ -52,27 +55,21 @@ class HomeCourse extends Component {
     renderHomeCoueseView() {
         return (
             <View style={styles.container}>
+            <View style={{top:100}}>
+    <Button title="按钮"
+        color='red'
+        onPress={this.changeColor}
+        disabled={false}/>
+        </View>
+        </View>
 
-                <ToolbarAndroid   //标题栏
-                    titleColor='#D6DDEF'  //只支持RGB数值，设置标题的字体颜色
-                    style={styles.toolbar}
-                    title="主页"></ToolbarAndroid>
-                <Swiper style={styles.wrapper}//轮播图
-                        height={190}
-                        horizontal={true}
-                        autoplay={true}
-                        autoplayTimeout={2.5}
-                        autoplayDirection={false}
-                >
-
-                    {this.renverViewpagerview()}
-                </Swiper>
-
-            </View>
         );
     }
+    changeColor=()=> {
+        Alert.alert('hello','world',[])
+    }
 
-    //返回轮播图的图片,这里添加Key 是为了react-key-warning  警告保证dom树的唯一性
+        //返回轮播图的图片,这里添加Key 是为了react-key-warning  警告保证dom树的唯一性
     renverViewpagerview() {
         var imageViews = [];
         for (let i = 0; i < IMGS.length; i++) {//注意这里要用let 修饰要不然，这里传递的数据一直是最后一个
